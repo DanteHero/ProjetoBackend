@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; /* Alteração para permitir rolagem vertical */
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        #terminal {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: black;
+            overflow-x: hidden;
+            overflow-y: auto; /* Adição para permitir rolagem vertical */
+            position: relative;
+            padding: 10px;
+            flex-grow: 1; /* Para que o terminal ocupe todo o espaço disponível na tela */
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: pre-wrap;
+            margin: 0;
+            letter-spacing: 5px;
+            animation: typing 0.5s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .matrix-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: -1;
+            display: flex;
+        }
+
+        .matrix-square {
+            width: 10px;
+            height: 10px;
+            background: limegreen;
+            opacity: 1;
+            animation: matrixSquare 0.1s alternate infinite;
+            margin: 1px; 
+        }
+
+        @keyframes matrixSquare {
+            from {
+                opacity: 0.2;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="terminal" class="typing-animation">
+    <p>&gt; Inicializando sistema...</p>
+    <div class="matrix-effect"></div>
+    <p>&gt; Insira a senha para continuar: <span id="password"></span></p>
+</div>
+
+<script>
+    const terminal = document.getElementById('terminal');
+    const matrixEffect = document.querySelector('.matrix-effect');
+    const passwordSpan = document.getElementById('password');
+    const texts = [
+        "&gt; Inicializando sistema...",
+        "&gt; Carregando módulos...",
+        "&gt; Acesso concedido...",
+        "&gt; Registro de Pesquisa do Dr. Adrian Novak - Ypsilon-9",
+        "&gt; Desembarquei na topografia estuarina de Ypsilon-9, planetesimal erigido no extremo periférico do setor interestelar designado. Os dados indicam uma cobertura glaciária extensiva, restringindo a temperatura média a níveis criogênicos. Procedi com a análise geoquímica e atmosférica inicial, registrando características distintivas da composição atmosférica e mineralogia local. Os ensaios mineralógicos corroboram a presença de minerais inusuais, ostentando propriedades singulares com potencial aplicação tecnológica. Oscilações térmicas acentuadas demandam adaptações constantes nos sistemas ambientais dos trajes. Implementei uma estação meteorológica automatizada para monitoramento ininterrupto dos padrões climáticos",
+        "&gt; Análise biométrica em andamento...",
+        "&gt; Identificado novo organismo...",
+        "&gt; Continuando investigações..."
+    ];
+
+    let currentTextIndex = 1;
+
+    function displayNextText() {
+        if (currentTextIndex < texts.length) {
+            terminal.innerHTML += `<p class="typing-animation">${texts[currentTextIndex]}</p>`;
+            matrixEffect.innerHTML = Array.from({ length: texts[currentTextIndex].length }).map(() => '<span class="matrix-square"></span>').join('');
+            currentTextIndex++;
+        } else {
+            terminal.innerHTML += `<p>&gt; Fim da transmissão...</p>`;
+        }
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            if (currentTextIndex === 2) {
+                const enteredPassword = prompt('Insira a senha:');
+                const correctPassword = "senha123";
+                
+                if (enteredPassword === correctPassword) {
+                    displayNextText();
+                } else {
+                    alert('Senha incorreta. O acesso foi negado.');
+                }
+            } else {
+                displayNextText();
+            }
+        }
+    }
+
+    document.addEventListener('keypress', handleKeyPress);
+</script>
+
+</body>
+</html>

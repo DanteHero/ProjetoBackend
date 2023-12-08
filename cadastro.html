@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!---bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        
+        <!--folha de estilos-->
+        <link id="estilo_css" rel="stylesheet" href="css/css.css">
+    
+    
+        <title>Telecall</title>
+        <link rel="icon" type="image/png" href="img/icone.png" />
+
+        <script src="js/script_navbar.js"></script>
+        <script src="js/script_validar_cadastro.js"></script>
+        
+</head>
+<body id="body_cadastro"> 
+        <!--------------------------------------------------------------------     main     -------------------------------------------   ----------------------------------------------------------------->
+    <main>
+
+        <form action="php/register.php" method="post" name="cadastro" id="cadastro">
+      
+           <br><h3>CADASTRO DE USUÁRIO</h3><br>
+            <div class="container" name="campos_cadastro" id="campos_cadastro">
+                <label for="nome">Nome:</label><br>
+                <input class="campos_obrigatorios" type="text" placeholder="Digite seu nome" id="nome" name="nome" required><br>
+                <span class="span" id="span_nome">*mensagem!</span><br>     
+                
+                <label for="datanasci">Data de nascimento:</label><br>
+                <input class="campos_obrigatorios" type="date" id="datanasci" name="datanasci" required><br>
+                <span class="span" id="span_datanasci">*mensagem!</span><br>
+
+                <label  id= "titulo_sexo" type="text">Sexo: </label>
+                    <input  class="radio" type="radio"  name="sexo" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                    
+                    <input class="radio"type="radio"  name="sexo" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                    <span class="span" id="span_sexo">*mensagem!</span><br><br>
+
+              <label for="nome">Nome Materno:</label><br>
+                <input class="campos_obrigatorios" type="text" placeholder="Nome da mãe" id="nomemat" name="nomemat" required><br>
+                <span class="span" id="span_nomemat">*mensagem!</span><br>  
+                    
+                <label for="cpf">CPF:</label><br>
+                <input class="campos_obrigatorios" type="text"id="cpf"name="cpf" autocomplete="oof" placeholder="xxx.xxx.xxx-xx" required><br>
+                <span class="span" id="span_cpf">*mensagem!</span><br>
+
+                <label for="tel_cel">Telefone Celular:</label><br>
+                <input class="campos_obrigatorios" type="tel" name="tel_cel" id="tel_cel" placeholder="+xx (xx) xxxx-xxxx" required><br>
+                <span class="span" id="span_tel_cel">*mensagem!</span><br>
+
+                <label for="tel_fixo">Telefone Fixo:</label><br>
+                <input class="campos_obrigatorios" type="tel" name="tel_fixo" id="tel_fixo" placeholder="+xx (xx) xxxx-xxxx" required><br>
+                <span class="span" id="span_tel_fixo">*mensagem!</span><br>
+
+                <label for="CEP">CEP:</label><br>
+                <input class="campos_obrigatorios" type="text" name="CEP" id="CEP" placeholder="xxxxx-xxx" required><br>
+                <span class="span" id="span_CEP">*mensagem!</span><br>
+
+                <label for="login">Login:</label><br>
+                <input class="campos_obrigatorios" type="text" maxlength="6" name="login" id="login" placeholder="Digite seu login" required><br>
+                <span class="span" id="span_login">*mensagem!</span><br>
+
+                <label for="senha">Senha:</label><br>
+                <input class="campos_obrigatorios" type="password" maxlength="8" name="senha" id="senha" placeholder="Digite sua senha" required > <br>
+                <span class="span" id="span_senha">*mensagem!</span><br>
+              
+                <label for="confsenha">Confirmar Senha:</label><br>
+                <input class="campos_obrigatorios" type="password" maxlength="8" name="confsenha" id="confsenha" placeholder="Confirme sua senha" required><br>
+                <span class="span" id="span_confsenha">*mensagem!</span><br>
+
+                <label>Permissão:</label><br>
+                <select name="permission_level" id="permission_level" required>
+                  <option value="1">User</option>
+                </select><br>
+            </div><br>
+
+            <div class="botoescontainer">
+            <button class="botoes_cadastro"type="submit"name='botaocadastrar' id= 'botaocadastrar'>Cadastrar</button>
+            <button class="botoes_cadastro"name= 'botaolimpar' id='botaolimpar' type="reset">Limpar</button>
+            </div>
+            <p id="cadastre_aqui">Já possui uma conta? <a id="cadastre_aqui" href="login.html">Entre aqui.</a></p>
+          </form>
+        
+        </form>
+       
+       
+    </main>
+
+          <!--------------------------------------------------------------------     footer   ---------------------------------------------   ----------------------------------------------------------------->
+  
+      <footer id="footer">
+    <br>
+    <h6>Copyright © 2023 Karol Horsts e Gabriel Oliveira. Todos os direitos reservados.</h6>
+    </footer>
+  
+    
+</body>
+</html>

@@ -1,0 +1,785 @@
+/*////  body  ----------------------------------------------------------------////*/
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(24, 71, 124, 0.377),rgba(255, 255, 255, 0.062));
+    background-repeat: no-repeat;
+}
+
+/*////  header ------------------------------------------------------------- ////*/
+
+header {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;/*alinha as divs */
+    background-image: linear-gradient(to right, #660417, #12447b);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.61);    
+}
+
+#logo_header {
+    width: 230px;
+    height: 70px;
+    padding-top: 10px;
+    text-align: center;
+  
+}
+
+#logo_header_img {
+    width: 180px;        
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+}
+
+#area_cliente {
+    padding:15px ;
+    height: 54px;
+    display: inline-flex;
+    color:white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+#area_cliente:hover {
+    background-color: rgba(0, 0, 0, 0.123);    
+}
+
+#icone_area_cliente {
+    height: 20px;
+    width: 20px; 
+}
+
+#text_area_cliente {
+    padding-left:5px ;
+  
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  padding-top: 15px;
+}
+
+#menu a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+#menu a:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.123);
+}
+
+#btn-mobile {
+  display: none;
+  color: white;
+}
+
+#btn-mobile:hover {
+    background-color: rgba(0, 0, 0, 0.123);  
+}
+
+/*-------------------------navbar responsivo ------------------------------ */
+
+@media (max-width: 1020px) {
+
+  header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #660417;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.61);
+}
+    
+ #logo_header_img {
+    width: 140px;
+    padding-right: 10px;   
+}
+  
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    right: 0px;
+    background: rgba(236, 74, 74, 0.911);
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  
+  #nav.active #menu {
+    height: 40%;
+    visibility: visible;
+    overflow-y: auto;
+  }
+  
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  #menu a:hover {
+    font-weight: bold;
+  }
+  
+  #text_area_cliente {
+    display: none;
+  }
+  
+ #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    height: auto;
+  }
+  
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/*////  main  --------------------------------------------  ////*/
+#img_post {
+  width: 100%;
+}
+#section_CPaaS {
+    width: 100%;
+    height: 50vh;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+
+#container_Colapse_CPaaS {
+  margin: auto;
+}
+
+#container_Colapse_CPaaS p {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%; 
+}
+
+#section_CPaaS h1 {
+  margin-left: 5%;
+  border-bottom: 2px solid rgba(14, 92, 155, 0.685) ;
+  width: 80%;
+}
+
+#container_Colapse_CPaaS button {
+  width: 35%;
+  height: 100px;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  background-color: #292929;
+  outline: 0px;
+  color: white;
+}
+
+#container_Colapse_CPaaS button:focus {
+  height: 110px;
+  background-color: #660417;
+  box-shadow: none!important;
+  outline: 0px;
+  }
+
+#container_Colapse_CPaaS img {
+  width: 60%;
+  
+}
+@media (max-width: 750px) {
+  #container_Colapse_CPaaS p {
+    flex-direction: column;
+    flex-wrap: nowrap; 
+  }
+  
+  #container_Colapse_CPaaS button {
+    width: 80%;
+    height: 40px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    background-color: #292929;
+    outline: 0px;
+    color: white;  
+  }
+  
+  #container_Colapse_CPaaS button:focus {
+    height: 50px;
+  }
+
+  #container_Colapse_CPaaS img {
+    width: 100%;
+}
+}
+  
+/*////  footer ----------------------------------------------------  ////*/
+
+#footer {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0.61, 0);    
+    margin-top: 25%;
+    padding: 1%;
+    background-image: linear-gradient(to right,#660417, #12447b);
+    color: white;
+    height: 65px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////              Login                       //////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#form_login { 
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    padding: 50px;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.26);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.26);
+    text-align: center;
+    }
+
+.divlogo_login {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#logo_login {
+    width: 200px;
+}
+ 
+#camposlogin {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.658);
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+    border-radius: 10px;
+}
+
+#botaologin { 
+width: 120px;
+height: 35px;
+background-color: #12447b;
+border: 1px solid rgba(0, 0, 0, 0.219);
+border-radius: 5px;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+cursor: pointer;  
+text-align: center;      
+}
+
+#botaologin:hover { 
+background-color: #0d253f;
+}
+
+#cadastre_aqui {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#form_login span {
+  font-size: small;
+  display: none;
+  color: #660417;
+}
+
+#form_login input {
+font-size: smaller;
+outline: 2px;
+}
+
+#form_login input:focus {
+border-color: #1a488d;
+}
+
+#botaologin:disabled {
+  background-color: rgba(24, 96, 163, 0.726)!important;
+}
+
+@media (max-width: 750px) {
+  #form_login { 
+    display: block;
+    background-color: rgba(255, 255, 255, 0.603);
+    width: 100%;
+    height: 100%;
+    padding:20px;
+    border-radius: 0px;
+    position: relative;
+    margin: 0px;
+    margin-top: 0px;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    }
+  
+    #camposlogin {
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(0, 0, 0, 0.658);
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.123);
+      border-radius: 10px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////              Cadastro                     //////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#cadastro {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.26);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.712);
+    box-shadow: 20px 20px rgba(0, 0, 0, 0.171);
+
+}
+
+#cadastro h3 {
+    text-align: center;
+    font-size: larger;
+
+}
+ 
+#campos_cadastro {
+    border: 2px solid rgba(0, 0, 0, 0.171);
+    padding: 20px;
+    text-align: left;
+                   
+}
+
+#cadastro span {
+    display: none;
+    color: #660417;
+}
+
+#cadastro input {
+  height: 40px;
+  width: 50%;
+  font-size: small;
+  outline: 2px;
+}
+
+ #cadastro input:focus {
+  border-color: #1a488d;
+
+}
+
+.error_input {
+  border-color: #660417;
+  outline: 2px;
+}
+
+.error_input:focus {
+  border-color: #660417!important;
+}
+
+#cadastro input.radio {
+  height: auto;
+  width: auto;
+  outline: 2px;
+ }
+
+#inf_senha{
+  width: 50%;
+  color: rgba(0, 0, 0, 0.438);
+}
+
+.botoescontainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.botoes_cadastro {
+  width: 100px !important;
+  height: 35px!important;
+  background-color: #12447b!important;
+  border: 1px solid rgba(0, 0, 0, 0.219)!important;
+  border-radius: 5px!important;
+  color: white!important;
+  font-family: Arial, Helvetica, sans-serif!important;
+  cursor: pointer!important;
+}
+
+.botoes_cadastro:hover { 
+  width: 100px!important;
+  height: 35px!important;
+  background-color: #0d253f!important;
+  border: 1px solid rgba(0, 0, 0, 0.219)!important;
+  border-radius: 5px!important;
+  color: white!important;
+  font-family: Arial, Helvetica, sans-serif!important;
+  cursor: pointer!important;
+}
+
+#botaocadastrar:disabled {
+background-color: rgba(24, 96, 163, 0.726)!important;
+}
+          
+@media (max-width: 750px) {
+  #cadastro{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.692);
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px;
+    position: relative;
+    margin: 0px;
+    margin-top: 0px;
+    border: 0px ;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.712);
+    box-shadow: 0px;
+
+ }
+  
+ #inf_senha {
+  font-size: small;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.438);
+}
+  
+#cadastro span {
+  font-size: small;
+  display: none;
+  color: #660417;
+}
+  
+#cadastro input {
+  height:auto;
+  width: auto;
+  font-size: small;
+  outline: 2px;
+} 
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////              2FA                      ////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#_2fa .container {
+  background-color: white;
+  width: 90%;
+  margin-bottom: 5%; 
+  margin-top: 3%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.171);
+  border-radius: 30px;
+  padding: 3%;
+  font-size: 20px;
+}
+
+#_2fa h1 { 
+  color: #12447b;
+}
+
+#_2fa h4 { 
+  color: black;
+}
+
+#_2fa b { 
+  color: black;
+}
+
+#_2fa #itens_container1 {
+  display: inline-flex;
+  padding: 5%;
+}
+
+#_2fa #itens_container1 p {
+  width: 60%;
+  margin-right: 3%;
+}
+
+#_2fa #itens_container1 img {
+  width: 50%;
+  height: 70%;
+}
+
+#_2fa #container2 p {
+  font-size: xx-large; 
+}
+
+#_2fa #container5 {
+  border-bottom: 0px;
+}
+
+#_2fa #container5 img {
+  margin: auto;
+  width: 100%; 
+}
+
+@media (max-width: 810px) {
+
+  #_2fa .container {
+    width: 100vw !important;
+    box-shadow: 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 0px; 
+    font-size:medium;
+  } 
+  
+  #_2fa #itens_container1 {
+    display:block;
+    padding: 0%;
+  }
+  
+  #_2fa #itens_container1 p {
+    width: 60%;
+    margin-right: 3%;
+  }
+  
+  #_2fa #itens_container1 img {
+    width: auto;
+  }
+  
+  #_2fa #container2 p {
+    font-size: x-large; 
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////             NÚMERO MÁSCARA                   ////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#numero_mascara .container {
+  background-color: white;
+  width: 90%;
+  margin-bottom: 5%; 
+  margin-top: 3%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.171);
+  border-radius: 30px;
+  padding: 3%;
+  font-size: 20px;
+}
+
+#numero_mascara h1 { 
+  color: #12447b;
+}
+
+#numero_mascara h4 { 
+  color: black;
+}
+
+#numero_mascara b { 
+  color: black;
+}
+
+#numero_mascara h5 { 
+  color: #12447b;
+}
+
+#numero_mascara #itens_container1 {
+  display: inline-flex;
+  padding: 5%;
+}
+
+#numero_mascara #itens_container1 img {
+  width: 30%;
+  margin-bottom: auto;
+}
+
+#numero_mascara #itens_container1 #text_container1 {
+  font-size: x-large;
+}
+
+ #numero_mascara #container2 img {
+  width: 100%;
+}
+
+#numero_mascara #container3 img {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+
+  #numero_mascara #itens_container1 #text_container1 {
+   font-size: large;
+  }
+}
+@media (max-width: 750px) {
+
+  #numero_mascara .container {
+    width: 100vw !important;
+    box-shadow: 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 0px; 
+    font-size:medium;
+  } 
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////            GOOGLE_VERIFIED              ////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#GOOGLE_VERIFIED  .container {
+  background-color: white;
+  width: 90%;
+  margin-bottom: 5%; 
+  margin-top: 3%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.171);
+  border-radius: 30px;
+  padding: 3%;
+  font-size: x-large;
+}
+
+#GOOGLE_VERIFIED  h1 { 
+  color: #12447b;
+}
+
+#GOOGLE_VERIFIED  h4 { 
+  color: black;
+}
+
+#GOOGLE_VERIFIED  h5 { 
+  color: black;
+}
+
+#GOOGLE_VERIFIED #itens_container1 {
+  display: inline-flex;
+  padding: 5%;
+}
+#GOOGLE_VERIFIED  #container1 img { 
+  width:50% ;
+ }
+
+ #GOOGLE_VERIFIED  #container2 img { 
+  width: 60% ;
+ }
+
+ #GOOGLE_VERIFIED  #container3 img { 
+  border-radius: 30px;
+  width: 60% ;
+ }
+
+ #GOOGLE_VERIFIED  #container4 img { 
+  width: 100% ;
+ }
+ @media (max-width: 1100px) {
+
+  #GOOGLE_VERIFIED #itens_container1 #text_container1 {
+   font-size: large;
+  }
+}
+@media (max-width: 950px) {
+
+  #GOOGLE_VERIFIED .container {
+    width: 100vw !important;
+    box-shadow: 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 0px; 
+    font-size:medium;
+  }
+  
+  #GOOGLE_VERIFIED #itens_container1 {
+    display:block;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////            SMS_PROGRAMÁVEL            ////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#SMS_PROGRAMÁVEL  .container {
+  background-color: white;
+  width: 90%;
+  margin-bottom: 5%; 
+  margin-top: 3%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.171);
+  border-radius: 30px;
+  padding: 3%;
+  font-size: x-large;
+}
+
+#SMS_PROGRAMÁVEL  h1 { 
+  color:#12447b;
+}
+
+#SMS_PROGRAMÁVEL  h4 { 
+  color: black;
+}
+#SMS_PROGRAMÁVEL  b { 
+  color: black;
+}
+
+#SMS_PROGRAMÁVEL #itens_container1 {
+  display: inline-flex;
+}
+
+#SMS_PROGRAMÁVEL  #container1 img { 
+  width: 60% ;
+ }
+
+#SMS_PROGRAMÁVEL  #container2 img { 
+  width: 60% ;
+ }
+
+ #SMS_PROGRAMÁVEL  #container3 img { 
+  border-radius: 30px;
+  width: 60% ;
+ }
+
+ #SMS_PROGRAMÁVEL  #container4 img { 
+  width: 100% ;
+ }
+
+ @media (max-width: 990px) {
+
+  #SMS_PROGRAMÁVEL  .container {
+    width: 100vw !important;
+    box-shadow: 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 0px; 
+    font-size:medium;
+  } 
+   
+  #SMS_PROGRAMÁVEL  #itens_container1 {
+    display:block;
+  }
+}

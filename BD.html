@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo do Banco de Dados MySQL</title>
+</head>
+<body>
+    CREATE DATABASE telecall;
+    USE telecall;
+    CREATE TABLE users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        login VARCHAR(6) NOT NULL,
+        senha VARCHAR(8) NOT NULL,
+        permission_level INT NOT NULL,
+        nome varchar(60) NOT NULL,
+        nomemat varchar(20) NOT NULL,
+        datanasci date NOT NULL,
+        cpf VARCHAR(14) NOT NULL,
+        tel_cel VARCHAR(20) NOT NULL,
+        tel_fixo VARCHAR(20) NOT NULL,
+        sexo varchar(80) NOT NULL,
+        CEP varchar(9) NOT NULL,
+        pergunta VARCHAR(255),
+        resposta VARCHAR(255)
+    );
+
+    INSERT INTO users (login, senha, permission_level, nome, nomemat, datanasci, cpf, tel_cel, tel_fixo, sexo, CEP) VALUES ('adminn', 'senha123', 2, 'Admin', 'Admin', '1990-01-01', '123.456.789-01', '(99) 99999-9999', '(88) 8888-8888', 'Admin', '1111-111'
+);
+
+</body>
+</html>

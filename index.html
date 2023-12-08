@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!---bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <!--folha de estilos-->
+        <link id="estilo_css" rel="stylesheet" href="css/css.css">
+    
+    
+        <title>Telecall</title>
+        <link rel="icon" type="image/png" href="img/icone.png"/>
+        
+</head>
+<body>
+        <!--------------------------------------------------------------------     header    ---------------------------------------------  ----------------------------------------------------------------->
+        <header>
+            <a class="bp" id="logo_header" href="index.html"><img id="logo_header_img" src="img/telecall-logo-white.png"></a>
+            <nav id="nav">
+              
+              <ul id="menu" role="menu">
+                <li><a href="2FA.html">2FA</a></li>
+                <li><a href="numero_mascara.html">Número Máscara</a></li>
+                <li><a href="google_verified.html">Google Verified Calls</a></li>
+                <li><a href="sms.html">SMS Programável</a></li>
+              </ul>
+              <a href="php/perfil.php" class="itens_menu" id="area_cliente">
+                <svg id="icone_area_cliente"xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+                <div id="text_area_cliente">Área do Cliente</div>
+              </a>
+            </nav>
+      </header>
+   
+        <!--------------------------------------------------------------------     main     -------------------------------------------   ----------------------------------------------------------------->
+    <main>
+        <a class="img_post" id="img_post" href="index.html"><img id="img_post" src="img/telecall_post.jpeg"></a>       
+        <section id="section_CPaaS">
+          <h1>CPaaS - Serviço de Comunicações</h1><br>
+            <div id="container_Colapse_CPaaS">
+                
+                <p>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  O que é?
+                  </button>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                  Transformação Digital
+                  </button>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                  Usos
+                  </button>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+                  Vantagens Telecall
+                  </button>
+                </p>
+                
+                <div class="collapse" id="collapseExample" data-parent="#container_Colapse_CPaaS">
+                  <div class="card card-body">
+                    <img src="img/oque_é.png">
+                  </div>
+                </div>
+                
+                <div class="collapse" id="collapseExample2" data-parent="#container_Colapse_CPaaS">
+                  <div class="card card-body">
+                    <img src="img/Transformação_digital.png">
+                  </div>
+                </div>
+                
+                <div class="collapse" id="collapseExample3" data-parent="#container_Colapse_CPaaS">
+                  <div class="card card-body">
+                  <img src="img/usos.png">
+                  </div>
+                </div>
+            
+                <div class="collapse" id="collapseExample4" data-parent="#container_Colapse_CPaaS">
+                  <div class="card card-body">
+                    <img src="img/Vantagens_telecal.png">
+                  </div>
+                </div>
+            
+            
+              </div>
+                
+
+        </section>
+        
+        
+       
+    </main>
+   
+        <!--------------------------------------------------------------------     footer   ---------------------------------------------   ----------------------------------------------------------------->
+    <footer id="footer">
+    <br>
+    <h6>Copyright © 2023 Karol Horsts e Gabriel Oliveira. Todos os direitos reservados.</h6>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/script_navbar.js"> </script>
+</body>
+</html>
